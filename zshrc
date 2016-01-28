@@ -16,7 +16,8 @@ export EDITOR='emacs'
 
 # Git shit
 
-source .git-prompt.sh
+source ~/.zshd/zsh-git-prompt/zshrc.sh
+source ~/.git-prompt.sh
 
 function chpwd() { # to ls after directory change
     emulate -LR zsh
