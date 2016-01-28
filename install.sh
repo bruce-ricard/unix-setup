@@ -1,4 +1,6 @@
 #!/bin/sh
 
-ln -s -i ./emacs ~/.emacs
-ln -s -i ./zshrc ~/.zshrc
+current_directory=`pwd`
+
+ln -s -i $current_directory/emacs ~/.emacs
+ln -s -i $current_directory/zshrc ~/.zshrc
