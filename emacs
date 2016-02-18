@@ -6,3 +6,5 @@
 (autoload 'camldebug "cameldeb" "Run the Caml debugger." t)
 
 (setq column-number-mode t)
+
+(show-paren-mode 1)
