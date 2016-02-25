@@ -8,3 +8,5 @@
 (setq column-number-mode t)
 
 (show-paren-mode 1)
+
+(setq-default indent-tabs-mode nil)
