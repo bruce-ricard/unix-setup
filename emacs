@@ -1,5 +1,5 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
+(add-to-list 'load-path "~/.opam/system/share/emacs/site-lisp/")
 (setq auto-mode-alist
   (cons '("\\.ml\\w?" . tuareg-mode) auto-mode-alist))
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code." t)
