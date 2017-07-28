@@ -11,7 +11,7 @@ alias sl=ls
 alias ssh-add='ssh-add || { eval `ssh-agent` && ssh-add }'
 
 export PATH="$PATH:~/bin:/Applications/Contents/Resources/bin/"
-export EDITOR='emacs'
+export EDITOR='emacs -nw'
 
 
 # Git shit
@@ -133,6 +133,10 @@ zstyle :compinstall filename '/home/bruce/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+# Ocaml stuff
+
+alias ocaml='ledit -x -h ~/.ocaml_history ocaml'
 
 # OPAM configuration
 . /Users/bruce.ricard/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
