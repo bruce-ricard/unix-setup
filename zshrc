@@ -137,6 +137,7 @@ compinit
 # Ocaml stuff
 
 alias ocaml='ledit -x -h ~/.ocaml_history ocaml'
+eval `opam config env`
 
 # OPAM configuration
 . /Users/bruce.ricard/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
