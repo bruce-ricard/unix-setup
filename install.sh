@@ -2,7 +2,11 @@
 
 current_directory=$(dirname `readlink -e $0`)
 
-git clone https://github.com/olivierverdier/zsh-git-prompt.git ~/.zshd/zsh-git-prompt
+GIT_PROMPT_DIR='~/.zshd/zsh-git-prompt'
+
+if [ ! -d "$GIT_PROMPT_DIR" ]; then
+    git clone https://github.com/olivierverdier/zsh-git-prompt.git "$GIT_PROMPT_DIR"
+fi
 
 ln -s -i $current_directory/emacs ~/.emacs
 ln -s -i $current_directory/zshrc ~/.zshrc
