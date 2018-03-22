@@ -1,0 +1,5 @@
+[user]
+	name = Bruce Ricard
+	email = bruce.ricard@gmail.com
+[push]
+	default = upstream
