@@ -8,11 +8,8 @@ alias cp='cp -i'
 
 alias sl=ls
 
-alias ssh-add='ssh-add || { eval `ssh-agent` && ssh-add }'
-
 export PATH="$PATH:~/bin:/Applications/Contents/Resources/bin/"
 export EDITOR='emacs -nw'
-
 
 # Git shit
 
