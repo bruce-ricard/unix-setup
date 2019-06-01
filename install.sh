@@ -1,12 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
 current_directory=$(dirname `readlink -e $0`)
 
-GIT_PROMPT_DIR='~/.zshd/zsh-git-prompt'
+GIT_PROMPT_DIR="${HOME}/.zshd/zsh-git-prompt"
 
 if [ ! -d "$GIT_PROMPT_DIR" ]; then
+    echo Installing git prompt
+    mkdir -p "${GIT_PROMPT_DIR}"
     git clone https://github.com/olivierverdier/zsh-git-prompt.git "$GIT_PROMPT_DIR"
 fi
 
