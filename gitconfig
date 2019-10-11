@@ -3,3 +3,11 @@
 	email = bruce.ricard@gmail.com
 [push]
 	default = upstream
+[alias]
+        co = checkout
+        ds = "diff --staged"
+        flog = "log --pretty=fuller --decorate"
+        lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+        llog = "log --date=local"
+        lol = "log --graph --decorate --oneline"
+lola = "log --graph --decorate --oneline --all"
