@@ -13,6 +13,8 @@ export EDITOR='emacs -nw'
 
 # Git shit
 
+alias gst='git status'
+
 source ~/.zshd/zsh-git-prompt/zshrc.sh
 #source ~/.git-prompt.sh
 
