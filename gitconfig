@@ -13,3 +13,5 @@
 lola = "log --graph --decorate --oneline --all"
 [pull]
 	rebase = true
+[rebase]
+	autoStash = true
