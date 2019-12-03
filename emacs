@@ -13,6 +13,8 @@
 (show-paren-mode 1)
 
 (setq-default indent-tabs-mode nil)
+(setq require-final-newline 'visit-save)
+
 
 ;; Add opam emacs directory to the load-path
 (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
