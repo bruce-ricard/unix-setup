@@ -11,7 +11,7 @@ alias sl=ls
 alias pbcopy="xclip -sel clip"
 alias pbpaste="xclip -sel clip -o"
 
-export PATH="$PATH:~/bin:/Applications/Contents/Resources/bin/"
+export PATH="$PATH:~/bin"
 export EDITOR='emacs -nw'
 
 # Git shit
