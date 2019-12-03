@@ -15,3 +15,7 @@ lola = "log --graph --decorate --oneline --all"
 	rebase = true
 [rebase]
 	autoStash = true
+[core]
+        pager = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+[color]
+        ui = always
