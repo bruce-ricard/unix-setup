@@ -12,6 +12,8 @@ if [ ! -d "$GIT_PROMPT_DIR" ]; then
     git clone https://github.com/olivierverdier/zsh-git-prompt.git "$GIT_PROMPT_DIR"
 fi
 
+sudo apt-get install xclip -y
+
 ln -s -i $current_directory/emacs ~/.emacs
 ln -s -i $current_directory/zshrc ~/.zshrc
 ln -s -i $current_directory/screenrc ~/.screenrc
