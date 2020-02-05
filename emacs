@@ -7,6 +7,7 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-to-list 'load-path "~/.opam/system/share/emacs/site-lisp/")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (setq auto-mode-alist
   (append '(("\\.ml[ily]?$" . tuareg-mode)
   	    ("\\.eliom$" . tuareg-mode))
