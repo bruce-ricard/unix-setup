@@ -1,9 +1,16 @@
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+'("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+(package-refresh-contents)
+(package-install 'use-package))
+
+(use-package try
+:ensure t)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-to-list 'load-path "~/.opam/system/share/emacs/site-lisp/")
@@ -22,7 +29,6 @@
 
 (setq-default indent-tabs-mode nil)
 (setq require-final-newline 'visit-save)
-
 
 ;; Add opam emacs directory to the load-path
 (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
@@ -46,4 +52,5 @@
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
  '(custom-enabled-themes (quote (wheatgrass)))
- '(inhibit-startup-screen t))
+ '(inhibit-startup-screen t)
+ '(package-selected-packages (quote (try use-package))))
