@@ -60,3 +60,5 @@
  '(custom-enabled-themes (quote (wheatgrass)))
  '(inhibit-startup-screen t)
  '(package-selected-packages (quote (try use-package))))
+
+(winner-mode 1)
