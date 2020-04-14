@@ -19,3 +19,5 @@ lola = "log --graph --decorate --oneline --all"
         pager = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [color]
         ui = always
+[interactive]
+	diffFilter = /usr/share/doc/git/contrib/diff-highlight/diff-highlight
