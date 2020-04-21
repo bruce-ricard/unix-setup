@@ -27,7 +27,8 @@
 
 (show-paren-mode 1)
 
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode t)
+(setq-default tab-width 4)
 (setq require-final-newline 'visit-save)
 
 (let ((opam-share (ignore-errors (car (process-lines "opam"
