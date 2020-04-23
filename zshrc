@@ -22,28 +22,28 @@ source ~/.zshd/zsh-git-prompt/zshrc.sh
 #source ~/.git-prompt.sh
 
 function chpwd() { # to ls after directory change
-    emulate -LR zsh
-    ls
+	emulate -LR zsh
+	ls
 }
 
 function echodo () {
-       echo "$@"
-       "$@"
+	echo "$@"
+	"$@"
 }
 
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 
 function _user_host() {
-  if [[ -n $SSH_CONNECTION ]]; then
-    me="%n@%m"
+	if [[ -n $SSH_CONNECTION ]]; then
+		me="%n@%m"
 #  elif [[ $USER = "root" ]]; then
-#      me="%{bg[red]}ROOT"
+#	   me="%{bg[red]}ROOT"
   elif [[ $LOGNAME != $USER ]]; then
-    me="%n"
+	me="%n"
   fi
   echo me:$me
   if [[ -n $me ]]; then
-    echo "%{$fg[cyan]%}$me%{$reset_color%}:"
+	echo "%{$fg[cyan]%}$me%{$reset_color%}:"
   fi
 }
 
@@ -54,17 +54,17 @@ RPROMPT="\$(git_super_status) %~" # prompt for right side of screen
 # match your local godi installation!
 function godi () {
    if [ -z "$1" ]; then
-       echo $PATH | sed 's/.*\/godi.\([0-9.]\+\)\/.*/\1/g'
+	   echo $PATH | sed 's/.*\/godi.\([0-9.]\+\)\/.*/\1/g'
    else
-       shopt -s extglob
-       case $PATH in
-           */godi/*) echodo export PATH=${PATH//godi\/+([0-9.])/godi\/$1} ;;
-           *) echodo export PATH=/opt/godi/$1/bin:$PATH ;;
-       esac
+	   shopt -s extglob
+	   case $PATH in
+		   */godi/*) echodo export PATH=${PATH//godi\/+([0-9.])/godi\/$1} ;;
+		   *) echodo export PATH=/opt/godi/$1/bin:$PATH ;;
+	   esac
    fi
    if [ -d .git ]; then
-       export OCAMLPATH=$PWD:$PWD/lib:$PWD/ps-lib
-       echo OCAMLPATH=$OCAMLPATH
+	   export OCAMLPATH=$PWD:$PWD/lib:$PWD/ps-lib
+	   echo OCAMLPATH=$OCAMLPATH
    fi
 }
 
