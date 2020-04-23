@@ -19,7 +19,6 @@ export EDITOR='emacs -nw'
 alias gst='git status'
 
 source ~/.zshd/zsh-git-prompt/zshrc.sh
-#source ~/.git-prompt.sh
 
 function chpwd() { # to ls after directory change
 	emulate -LR zsh
