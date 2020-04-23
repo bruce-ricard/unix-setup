@@ -38,13 +38,13 @@ function _user_host() {
 		me="%n@%m"
 #  elif [[ $USER = "root" ]]; then
 #	   me="%{bg[red]}ROOT"
-  elif [[ $LOGNAME != $USER ]]; then
-	me="%n"
-  fi
-  echo me:$me
-  if [[ -n $me ]]; then
-	echo "%{$fg[cyan]%}$me%{$reset_color%}:"
-  fi
+	elif [[ $LOGNAME != $USER ]]; then
+		me="%n"
+	fi
+	echo me:$me
+	if [[ -n $me ]]; then
+		echo "%{$fg[cyan]%}$me%{$reset_color%}:"
+	fi
 }
 
 PROMPT="${ret_status} ${_user_host}%{$reset_color%} %D{%a %m/%d %k:%M:%S} %{$fg_bold[green]%}> %{$reset_color%}"
@@ -53,19 +53,19 @@ RPROMPT="\$(git_super_status) %~" # prompt for right side of screen
 # Configures PATH and OCAMLPATH for godi. Check that the paths
 # match your local godi installation!
 function godi () {
-   if [ -z "$1" ]; then
-	   echo $PATH | sed 's/.*\/godi.\([0-9.]\+\)\/.*/\1/g'
-   else
-	   shopt -s extglob
-	   case $PATH in
-		   */godi/*) echodo export PATH=${PATH//godi\/+([0-9.])/godi\/$1} ;;
-		   *) echodo export PATH=/opt/godi/$1/bin:$PATH ;;
-	   esac
-   fi
-   if [ -d .git ]; then
-	   export OCAMLPATH=$PWD:$PWD/lib:$PWD/ps-lib
-	   echo OCAMLPATH=$OCAMLPATH
-   fi
+	if [ -z "$1" ]; then
+		echo $PATH | sed 's/.*\/godi.\([0-9.]\+\)\/.*/\1/g'
+	else
+		shopt -s extglob
+		case $PATH in
+			*/godi/*) echodo export PATH=${PATH//godi\/+([0-9.])/godi\/$1} ;;
+			*) echodo export PATH=/opt/godi/$1/bin:$PATH ;;
+		esac
+	fi
+	if [ -d .git ]; then
+		export OCAMLPATH=$PWD:$PWD/lib:$PWD/ps-lib
+		echo OCAMLPATH=$OCAMLPATH
+	fi
 }
 
 # ssh autocomplete known_hosts
