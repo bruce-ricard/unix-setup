@@ -2,7 +2,15 @@
 
 set -euo pipefail
 
-current_directory=$(dirname `readlink -e $0`)
+if [[ `uname` == 'Linux' ]]; then
+    readlink=readlink
+
+    sudo apt-get install xclip -y
+else
+    readlink=greadlink
+fi
+
+current_directory=$(dirname `$readlink -e -- "$0"`)
 
 GIT_PROMPT_DIR="${HOME}/.zshd/zsh-git-prompt"
 
@@ -11,8 +19,6 @@ if [ ! -d "$GIT_PROMPT_DIR" ]; then
     mkdir -p "${GIT_PROMPT_DIR}"
     git clone https://github.com/starcraftman/zsh-git-prompt.git "$GIT_PROMPT_DIR"
 fi
-
-sudo apt-get install xclip -y
 
 ln -s -i $current_directory/emacs ~/.emacs
 ln -s -i $current_directory/zshrc ~/.zshrc

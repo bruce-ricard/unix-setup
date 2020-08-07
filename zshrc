@@ -1,3 +1,10 @@
+if [[ `uname` == 'Linux' ]]; then
+   alias pbcopy="xclip -sel clip"
+   alias pbpaste="xclip -sel clip -o"
+else
+   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
+
 alias ls='ls -G --color'
 alias ll='ls -l'
 alias l='less'
@@ -7,9 +14,6 @@ alias rm='rm -i'
 alias cp='cp -i'
 
 alias sl=ls
-
-alias pbcopy="xclip -sel clip"
-alias pbpaste="xclip -sel clip -o"
 
 export PATH="$PATH:~/bin"
 export EDITOR='emacs -nw'
