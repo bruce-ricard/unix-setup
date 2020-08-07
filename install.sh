@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 current_directory=$(dirname `readlink -e $0`)
 
