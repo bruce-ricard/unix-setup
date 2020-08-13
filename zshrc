@@ -147,3 +147,8 @@ eval `opam config env`
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+## Pivotal stuff
+
+alias loadGlobalProtect='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
+alias unloadGlobalProtect='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
