@@ -60,6 +60,8 @@
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
  '(custom-enabled-themes (quote (wheatgrass)))
  '(inhibit-startup-screen t)
- '(package-selected-packages (quote (merlin tuareg dockerfile-mode try use-package))))
+ '(package-selected-packages
+   (quote
+	(yaml-mode merlin tuareg dockerfile-mode try use-package))))
 
 (winner-mode 1)
