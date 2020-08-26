@@ -21,3 +21,5 @@
 	ui = always
 [interactive]
 	diffFilter = diff-highlight
+[log]
+	follow = true
