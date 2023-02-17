@@ -12,6 +12,8 @@
 	lol = "log --graph --decorate --oneline"
 	lola = "log --graph --decorate --oneline --all"
     love = "!f(){ \
+		if [[ -z $1 ]]; then echo 'You must pass a file name as the first parameter to \"love\"' >&2 ; exit 1; fi ;\
+		if [[ -z $2 ]]; then echo 'You must pass a line matcher as the second parameter to \"love\"' >&2 ; exit 1; fi ;\
 		FILE_NAME=$1 ;\
 		FIRST_LINE=$2 ;\
 		LAST_LINE=${3:-+1} ;\
