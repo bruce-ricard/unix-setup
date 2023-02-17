@@ -11,7 +11,7 @@
 	llog = "log --date=local"
 	lol = "log --graph --decorate --oneline"
 	lola = "log --graph --decorate --oneline --all"
-    love = "!f(){ git log -L $2,+1:$1 ; };f"
+    love = "!f(){ FILE_NAME=$1 ; git log -L $2,+1:${FILE_NAME} ; };f"
 
 [pull]
 	rebase = true
